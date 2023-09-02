@@ -14,7 +14,7 @@ if not cap.isOpened():
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
-num=0
+num=210
 while True:
     # Read a frame from the camera
     ret, frame = cap.read()
@@ -29,6 +29,8 @@ while True:
     elif k == ord("q"):
         break
 
+    frame = cv2.line(frame, (0,59), (1280,59), (255,0,0), 1)
+    frame = cv2.line(frame, (0,688), (1280,688), (255,0,0), 1)
     frame = cv2.line(frame, (0,360), (1280,360), (255,0,0), 1)
     frame = cv2.line(frame, (640,0), (640,720), (255,0,0), 1)
 
